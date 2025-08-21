@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Creación de Hoja de Vida</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    background-color: #23520a; 
+    font-family: 'Arial', sans-serif;
+  }
+  .form-container {
+    max-width: 720px;
+    margin: 3rem auto;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 3rem 3rem 3rem;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+  }
+  h2 {
+    font-style: arial;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #2d7513;
+    padding-bottom: 0.3rem;
+    color: #2d7513;
+    width: fit-content;
+  }
+  label {
+    font-size: 0.875rem;
+    font-style: arial;
+    color: #111;
+  }
+  input[type="text"], input[type="email"], select, textarea {
+    border: 1.5px solid #c6e3b3;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1rem;
+    outline-offset: 2px;
+    outline-color: #2d7513;
+    font-size: 1rem;
+    font-style: normal;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+    border-color: #2d7513;
+    box-shadow: 0 2px 5px rgb(45 117 19 / 0.5);
+  }
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    
+  }
+  button {
+    background-color: #2d7513;
+    color: white;
+    font-style: arial;
+    font-size: 1rem;
+    padding: 0.6rem 0;
+    border-radius: 0.75rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #23520a;
+  }
+
+
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+</style>
+</head>
+<body>
+  <main class="form-container" role="main">
+    <h2>Creación de Hoja de Vida</h2>
+    <form>
+      <div class="input-grid">
+        <label for="nombres">Nombres</label>
+        <label for="apellidos">Apellidos</label>
+        <input id="nombres" name="nombres" type="text" placeholder="Ingrese sus nombres" autocomplete="given-name" />
+        <input id="apellidos" name="apellidos" type="text" placeholder="Ingrese sus apellidos" autocomplete="family-name" />
+        
+        <label for="email">Email</label>
+        <label for="contacto">Numero de Contacto</label>
+        <input id="email" name="email" type="email" placeholder="ejemplo@correo.com" autocomplete="email" />
+        <input id="contacto" name="contacto" type="text" placeholder="+57 300 000 0000" autocomplete="tel" />
+        
+        <label for="tipoDoc">Tipo de Documento</label>
+        <label for="numeroDoc">Número</label>
+        <select id="tipoDoc" name="tipoDoc" aria-label="Tipo de Documento">
+          <option value="" disabled selected>Seleccionar una opción</option>
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ti">Tarjeta de Identidad</option>
+          <option value="ce">Cédula de Extranjería</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+        <input id="numeroDoc" name="numeroDoc" type="text" placeholder="Número de documento" />
+      </div>
+
+      <label for="perfil">Perfil Profesional</label>
+      <textarea id="perfil" name="perfil" placeholder="Describa brevemente su perfil profesional"></textarea>
+
+      <button type="submit" aria-label="Crear Hoja de Vida">Crear Hoja de Vida</button>
+    </form>
+  </main>
+</body>
+</html>
+
+```
